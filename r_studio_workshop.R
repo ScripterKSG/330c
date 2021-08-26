@@ -103,7 +103,7 @@ paste(sentence_list, collapse = " ")
 stem_strings(sentence1) 
 
 #Welcome to your very first R error! R also known as base R has a ton of useful verbs. But people have developed all sorts of add-on libraries or packages with new bonus verbs. R doesn't know how to find bonus verbs by default, so you have to tell it where to look. Here's one way.  
-textstem::stem_strings(sentence2) #This says "look in the textstem library to find the verb stem_strings(). 
+textstem::stem_strings(sentence2) #This says "look in the textstem library to find the verb stem_strings(). If this didn't work type the following into your R console, press enter, and try again: install.packages("textstem")
 
 #  You can also save time and typing by pre-loading libraries. | You're going to see a lot of weird things in the console. Ignore them for now.  
 library(textstem) # This tells R- "Hey if you see a verb you don't understand, don't forget to check the textstem library." 
