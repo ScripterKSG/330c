@@ -8,7 +8,7 @@ This list is a demonstration list. It serves no other purpose.
 3. This is the third list item. 
 
 
-This is my dog Haggis. She thinks she'd pretty important. 
+This is my dog Haggis. She thinks she's pretty important. 
 
 
 ![My dog Haggis.](haggis.jpg)
