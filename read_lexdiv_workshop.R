@@ -6,6 +6,7 @@
 #Load Libraries 
 library(tidyverse)
 library(quanteda)
+library(quanteda.textstats) #Due to a recent package update this line is not in the video. You will need to run it for this script to work. 
 
 #Load Data
 data <- read_csv("datasets/football_tweets.csv")
