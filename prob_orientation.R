@@ -79,7 +79,7 @@ hist(jumbo_samples$percent_red)
 # How confident are we? ---------------------------------------------------
 
 # Calculate average Red %
-x_hat_red <- mean(jumbo_samples$red)
+x_hat_red <- mean(jumbo_samples$percent_red)
 
 # Calculate standard error for Red
 se_hat_red <- sqrt(x_hat_red * (1 - x_hat_red) / 10000)
@@ -89,7 +89,7 @@ c(x_hat_red - 1.96 * se_hat_red, x_hat_red + 1.96 * se_hat_red)
 
 
 # Calculate average Blue %
-x_hat_blue<- mean(jumbo_samples$blue)
+x_hat_blue<- mean(jumbo_samples$percent_blue)
 
 # Calculate standard error for Blue
 se_hat_blue <- sqrt(x_hat_blue * (1 - x_hat_blue) / 10000)
