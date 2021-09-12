@@ -37,13 +37,13 @@ sample(jar, 1)
 sample(jar, 3)
 
 # What if we try 10 times? 
-replicate(10, sample(jar, 3)) %>% table() %>% proportions()
+replicate(10, sample(jar, 3)) %>% table() %>% prop.table() #different code in video, but same effect
 
 # What if we try 1000 times? 
-replicate(1000, sample(jar, 3)) %>% table() %>% proportions()
+replicate(1000, sample(jar, 3)) %>% table() %>% prop.table() #different code in video, but same effect
 
 # What if we try 10,000 times? 
-replicate(10000, sample(jar, 3)) %>% table() %>% proportions()
+replicate(10000, sample(jar, 3)) %>% table() %>% prop.table() #different code in video, but same effect
 
 # Let's do it 10,000 times and see what each result looks like 
 samples <- replicate(10000, sample(jar,3) %>%  # take 3 beads out of the jar 10,000 times 
