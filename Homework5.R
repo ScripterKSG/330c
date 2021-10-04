@@ -37,13 +37,16 @@ data_word_n <- data_word_n %>%
 #Visualize frequency of most common words occurring more frequently than 10 times by debate
 data_word_n %>%
   arrange(desc(tf_idf)) %>%
-  mutate(word = factor(word, levels = rev(unique(word)))) %>% 
   group_by(date) %>% 
-  slice(1:10) %>% 
+  slice(1:10) %>%
   ungroup() %>%
-  ggplot(aes(word, tf_idf, fill=date)) +
+  #mutate(word = factor(word, levels = rev(unique(word)))) %>% This is replaced with the below to fix. 
+  mutate(date= as.factor(date),
+         word = reorder_within(word, tf_idf, date)) %>%
+  ggplot(aes(word, tf_idf, fill = date)) +
   geom_col() +
   xlab(NULL) +
   coord_flip()+
+  scale_x_reordered()+ # This must be added to fix issues with the labels created above. 
   facet_wrap(~date, ncol = 2, scales = "free_y")
 
