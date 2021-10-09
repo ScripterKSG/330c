@@ -15,7 +15,8 @@ nrc <- get_sentiments("nrc")
 
 
 # Build example dataframe -------------------------------------------------
-data <- data.frame(id=1:4,text=c("I’m so happy.","Your music is bad, and you should feel bad.", "I’m super excited to be in this wonderful world today which is the best of days.", "Don’t worry. Be happy."))
+data <- data.frame(id=1:4,text=c("I’m so happy.","Your music is bad, and you should feel bad.", "I’m super excited to be in this wonderful world today which is the best of days.", "Don’t worry. Be happy.")) %>% 
+  mutate(text = as.character(text)) # added to address Rstotle version issue
 
 
 # Exploratory Analysis ----------------------------------------------------
