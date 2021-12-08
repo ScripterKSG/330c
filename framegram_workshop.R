@@ -155,7 +155,7 @@ data %>%
   #anti_join(stop_words) %>%
   count(trigram, sort = TRUE) %>%
   filter(str_detect(trigram,econ_terms)) %>% 
-  filter(str_count(trigram,paste(stop_words$word, collapse = "|")) < 1) %>% 
+  filter(str_count(trigram,paste(stop_words$word, collapse = "|")) < 2) %>% 
   filter(n > 0) %>% # note filter change 
   mutate(trigram = reorder(trigram, n)) %>%
   ggplot(aes(x=trigram, y=n)) +
@@ -180,7 +180,7 @@ data %>%
   #anti_join(stop_words) %>%
   count(trigram, sort = TRUE) %>%
   filter(str_detect(trigram,econ_terms)) %>% 
-  filter(str_count(trigram,stop_words_bounded) < 1) %>% 
+  filter(str_count(trigram,stop_words_bounded) < 2) %>% 
   filter(n > 2) %>% # note filter change 
   mutate(trigram = reorder(trigram, n)) %>%
   ggplot(aes(x=trigram, y=n)) +
@@ -195,7 +195,7 @@ data %>%
   #anti_join(stop_words) %>%
   count(trigram, sort = TRUE) %>%
   filter(str_detect(trigram,econ_terms)) %>% 
-  filter(str_count(trigram,stop_words_bounded) < 1) %>% 
+  filter(str_count(trigram,stop_words_bounded) < 2) %>% 
   mutate(trigram = reorder(trigram, n)) %>%
   slice(1:15) %>% # top 10 
   ggplot(aes(x=trigram, y=n)) +
